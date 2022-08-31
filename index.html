@@ -1,12 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="vue.js"></script>
 </head>
 <body>
-    <p>我爱你</p>
+    <div id="app">
+          <input type="checkbox" id="name1" value="马云" v-model="checkedNames">
+          <label for="name1">马云</label>
+          <input type="checkbox" id="name2" value="马化腾" v-model="checkedNames">
+          <label for="name2">马化腾</label>
+          <input type="checkbox" id="name3" value="马明哲" v-model="checkedNames">
+          <label for="name3">马明哲</label>
+          <p><span>哪些人做过首富：{{checkedNames}}</span></p>
+        </div>
+        <script>
+            new Vue({
+                el:'#app',
+                data:{
+                    checkedNames:[],
+                }
+            })
+        </script>
 </body>
 </html>
